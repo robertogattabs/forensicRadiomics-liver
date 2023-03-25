@@ -25,7 +25,9 @@ library(randomForest)
 load(file = "./models/RandomForest.out_24.RData")
 load(file = "./models/example.input.dataset.RData")
 
-a <- predict( RF, newdata = example.input.dataset[2,])
+testingPatient <- 2
+
+a <- predict( RF, newdata = example.input.dataset[testingPatient,])
 result <- levels(a)[a]
 ```
 
