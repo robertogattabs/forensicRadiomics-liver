@@ -3,21 +3,21 @@ Scripts, tools and methods for Radiomics in Forensic liver-examination.
 
 ## Content
 
-In the *models* folder you can find the three dicotomic-randomForest-classifiers aimed at estimating if
+In the *models* folder you can find the three dicotomic randomForest classifiers aimed at estimate if:
 
 * the patients died before/after 12h ( *./models/RandomForest.out_12.RData* )
 * the patients died before/after 24h ( *./models/RandomForest.out_24.RData* )
 * the patients died before/after 36h ( *./models/RandomForest.out_36.RData* )
 
-The models are trainded with the randomforest package: you can find further information about how to use that object at: https://cran.r-project.org/web/packages/randomForest/index.html
+The models are trained with the R *randomforest* package: you can find further information about how to use that object at: https://cran.r-project.org/web/packages/randomForest/index.html
 
 An example of an input file, can be found in the *./models/example.input.dataset.RData*. If you want to use the models on an your dataset **shape it exactly as the given example input file**.
 
 ## Fast testing
 
-To easily test the model, let's assume you want to test the second patient in the *example.input.dataset.RData* dataset to know if it died before/after 24h:
+To easily test the model, let's assume you want to test the second patient in the *example.input.dataset.RData* dataset to know if it died before/after 24h.
 
-you can easily run :
+This task can easily be achieved with the following script:
 
 
 ```
@@ -31,7 +31,7 @@ a <- predict( RF, newdata = example.input.dataset[testingPatient,])
 result <- levels(a)[a]
 ```
 
-At this point, the variable *result* will contain the value *0*. By testing the same case with the 36h model, *result* will contain *1*.
+Now the variable *result* will contains *0*. By testing the same case with the 36h model, *result* will contain *1*.
 
 ## Important note
 
