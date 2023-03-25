@@ -13,9 +13,9 @@ An example of input file, can be found in the *./models/example.input.dataset.RD
 
 ## fast testing
 
-To easily test the model, let's assume you want to test the second patient in the *example.input.dataset.RData* dataset.
+To easily test the model, let's assume you want to test the second patient in the *example.input.dataset.RData* dataset to know if it died before/after 24h:
 
-you can easily test it with:
+you can easily run :
 
 
 ```
@@ -23,6 +23,9 @@ library(randomForest)
 load(file = "./models/RandomForest.out_24.RData")
 load(file = "./models/example.input.dataset.RData")
 
-predict( RF, newdata = example.input.dataset)
+a <- predict( RF, newdata = example.input.dataset)
+result <- levels(a)[a]
 ```
+
+At this point, the variable *result* will contain the value *0*. By testing the same case with the 36h model, *result* will contain *1*.
 
