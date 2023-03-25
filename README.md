@@ -1,6 +1,8 @@
 # forensicRadiomics-liver
 Scripts, tools and methods for Radiomics in Forensic liver-examination.
 
+## content
+
 In the *models* folder you can find the three dicotomic-randomForest-classifiers aimed at estimating if
 
 * the patients died before/after 12h
@@ -23,9 +25,12 @@ library(randomForest)
 load(file = "./models/RandomForest.out_24.RData")
 load(file = "./models/example.input.dataset.RData")
 
-a <- predict( RF, newdata = example.input.dataset)
+a <- predict( RF, newdata = example.input.dataset[2,])
 result <- levels(a)[a]
 ```
 
 At this point, the variable *result* will contain the value *0*. By testing the same case with the 36h model, *result* will contain *1*.
 
+## important note
+
+The features should be extracted with a radiomics software IBSI compliant ( see: https://theibsi.github.io/ ). In our specific case, we used moddicom ( https://github.com/kbolab/moddicom )
