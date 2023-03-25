@@ -31,7 +31,7 @@ a <- predict( RF, newdata = example.input.dataset[testingPatient,])
 result <- levels(a)[a]
 ```
 
-Now the variable *result* will contains *0*. By testing the same case with the 36h model, *result* will contain *1*.
+The variable *result* will contains *0* if the patient is estimated to be dead before the 24h or *1* otherwise.
 
 ## Important note
 
