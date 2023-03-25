@@ -44,7 +44,7 @@ The features should be extracted with a radiomics software IBSI compliant ( see:
 
 ## Contacts
 
-For any questions, issues or further information : *< corresponding author del paper >*
+For any questions, issues or further information about this project: *fabio.degiorgio@unicatt.it*
 
 ## References
 
