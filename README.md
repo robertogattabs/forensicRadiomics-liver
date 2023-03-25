@@ -1,23 +1,26 @@
 # forensicRadiomics-liver
-Scripts, tools and methods for Radiomics in Forensic liver-examination.
+Scripts, tools and methods for post-PMCT radiomic analysis of the liver.
+
 
 ## Content
 
-In the *models* folder you can find the three dicotomic randomForest classifiers aimed at estimate if:
+In the *./models* folder you can find the three dicotomic randomForest classifiers aimed at estimating if:
+
 
 * the patients died before/after 12h ( *./models/RandomForest.out_12.RData* )
 * the patients died before/after 24h ( *./models/RandomForest.out_24.RData* )
 * the patients died before/after 36h ( *./models/RandomForest.out_36.RData* )
 
-The models are trained with the R *randomforest* package: you can find further information about how to use that object at: https://cran.r-project.org/web/packages/randomForest/index.html
+The models are trained with the R randomforest package; you can find further information on how to use such package at the link: https://cran.r-project.org/web/packages/randomForest/index.html
 
-An example of an input file, can be found in the *./models/example.input.dataset.RData*. If you want to use the models on an your dataset **shape it exactly as the given example input file**.
+An example of input file can be found in the  *./models/example.input.dataset.RData*.  If you wish to use the models on your dataset, you **must structure it exactly like the sample input file**.
 
 ## Fast testing
 
-To easily test the model, let's assume you want to test the second patient in the *example.input.dataset.RData* dataset to know if it died before/after 24h.
+Assume you want to test the second subject in the *./models/example.input.dataset.RData* dataset to know if he/she died before/after 24h.
 
 This task can easily be achieved with the following script:
+
 
 
 ```
@@ -31,7 +34,9 @@ a <- predict( RF, newdata = example.input.dataset[testingPatient,])
 result <- levels(a)[a]
 ```
 
-The variable *result* will contains *0* if the patient is estimated to be dead before the 24h or *1* otherwise.
+The variable *result* will be set to *0* if the subject is estimated to have died before the 24h or, on the contrary, it will be set to *1*.
+
+
 
 ## Important note
 
