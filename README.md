@@ -1,7 +1,7 @@
 # forensicRadiomics-liver
 Scripts, tools and methods for Radiomics in Forensic liver-examination.
 
-## content
+## Content
 
 In the *models* folder you can find the three dicotomic-randomForest-classifiers aimed at estimating if
 
@@ -13,7 +13,7 @@ The models are trainded with the randomforest package: you can find further info
 
 An example of input file, can be found in the *./models/example.input.dataset.RData*
 
-## fast testing
+## Fast testing
 
 To easily test the model, let's assume you want to test the second patient in the *example.input.dataset.RData* dataset to know if it died before/after 24h:
 
@@ -31,7 +31,7 @@ result <- levels(a)[a]
 
 At this point, the variable *result* will contain the value *0*. By testing the same case with the 36h model, *result* will contain *1*.
 
-## important note
+## Important note
 
 The features should be extracted with a radiomics software IBSI compliant ( see: https://theibsi.github.io/ ). In our specific case, we used moddicom[1] ( https://github.com/kbolab/moddicom )
 
