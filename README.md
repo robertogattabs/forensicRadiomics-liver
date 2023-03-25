@@ -35,6 +35,9 @@ At this point, the variable *result* will contain the value *0*. By testing the 
 
 The features should be extracted with a radiomics software IBSI compliant ( see: https://theibsi.github.io/ ). In our specific case, we used moddicom[1] ( https://github.com/kbolab/moddicom )
 
+## Contacts
+
+For any questions, issues or further information : *< corresponding author del paper >*
 
 ## References
 
